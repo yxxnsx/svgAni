@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> svgDashAni </title>
+    <style>
+        #myPath{
+            fill:none;
+            stroke: #000;
+            stroke-width:2;
+            /* 점선과 여백 */
+            stroke-dasharray: 700;
+            /* 20px 선, 5 여백 */
+            stroke-dashoffset: -700;
+            /* 속도, 양수는 오른쪽 음수는 왼쪽으로 돌아감 */
+            animation: drawDash 4s forwards infinite;
+            /* forwards - 애니메이션 마친 후 상태 유지 */
+        }
+
+        @keyframes drawDash{
+            to{
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg width="300" height="150" xnkbs="http://www.w3.org/2000/svg">
+        <path id="myPath" d="M10 80 Q95 10 180 80"></path>
+        <!-- d의 M 시작점 Q제어점
+            시작점 10, 80에서 시작하여 제어점 95, 10을 경유하여
+            끝점 180, 80을 이어지는 곡선 
+        M : Move to의 약자, Q: Quadratic Bezier Curve -->
+    </svg>
+</body>
+</html>

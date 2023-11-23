@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svgLineAni</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset:0;
+                /* 대시옵셋 0으로 설정하여 선이 그려지도록 함 */
+            }
+        }
+        /* svg 경계 외부의 내용 보이게 하기 */
+        svg {
+            overflow: visible;
+        }
+        rect {   
+            stroke-dasharray:700; /*애니메이션의 길이*/         
+            stroke-dashoffset:700; 
+            animation : draw 2s forwards;    }
+
+            /* forwards -> 애니메이션이 완료된 후에 상태를 유지하도록 하는 옵션 */
+
+
+      /* 700픽셀의 길이로 이루어진 패턴 */
+         /* 700은, 윤곽선(stroke)의 대시 배열!
+
+            대시배열은 svg에서 사용되는 
+            윤곽선을 지정하는데 사용하는 용어
+            데시배열을 통해 실선, 공백, 선 등을 번갈아가며
+            나타내는 선의 패턴 
+            선의 패턴은, 선이나 경로에 대한 그래픽디자인 자체를 의미
+            */
+                     /* 이러한 패턴이 어디에서 시작할지 나타냄 */
+            /* stroke-dashoffset 시작 위치 조절
+            선이 그려지는 효과를 만듬 */
+     
+    </style>
+</head>
+
+<body>
+
+    <!-- viewBox : SVG의 크기와 좌표시스템 정의하는 데 사용되는 구조 
+    0 0 280 13 => min-x, min-y, width, height -->
+    <svg width="280" height="130" viewBox="0 0 280 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="250" height="100" rx="50" stroke="#0047FF" stroke-width="30" />
+    </svg>
+
+    <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="100" height="100" rx="50" stroke="white" stroke-width="30" />
+    </svg>
+
+</body>
+
+</html>

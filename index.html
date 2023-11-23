@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svgLineAniYS</title>
+    <style>
+         body {
+            background: #000000;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+     .myPath {
+            fill: darkorange;
+            stroke:#FFF;
+            stroke-width: 2;
+            /* 점선과 여백 */
+            stroke-dasharray:15 8; 
+            /* 속도 - 700(양수)-오른쪽, -700(음수)-왼쪽으로 돌아감*/
+            stroke-dashoffset:200; 
+            animation: drawDash 4s forwards infinite; 
+            /* forwards - 애니메이션 마친 후 상태 유지 */
+            /* infinite - 무한반복  */
+         
+            /* 20px 선, 5 여백 */
+        
+        }
+
+        @keyframes drawDash {
+            /* to - 마지막 상태 */
+            to { 
+                stroke-dashoffset:0; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.naver.com/" target="_blank">
+    <svg width="261" height="261" viewBox="0 0 261 261" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_403_2980)">
+        <path class="myPath" d="M240.761 193.339L147.812 60.186C163.084 50.6243 167.713 30.4926 158.152 15.2206C148.59 -0.0514912 128.458 -4.68067 113.186 4.88151C97.9143 14.4437 93.2851 34.5748 102.847 49.8469C105.467 54.0311 109.002 57.5663 113.186 60.186L20.2372 193.339C10.122 206.586 8.19097 224.35 15.2237 239.46C23.5176 253.786 39.2408 262.144 55.7552 261.004H205.243C221.757 262.144 237.48 253.786 245.774 239.46C252.807 224.35 250.876 206.586 240.761 193.339ZM127.573 239.253L186.929 154.222L202.274 176.266L158.35 239.254H127.573V239.253ZM71.1108 239.253L158.698 113.778L173.662 135.223L101.049 239.253H71.1108ZM34.473 229.401C31.2477 221.465 32.6251 212.4 38.0617 205.78L130.499 73.3772L145.517 94.8878C145.365 95.0835 145.148 95.1814 145.006 95.3771L45.674 237.72C40.9643 236.586 36.9198 233.582 34.473 229.401ZM226.525 229.401C221.864 236.445 213.629 240.257 205.243 239.253H184.874L215.564 195.275L222.904 205.78C228.352 212.394 229.742 221.459 226.525 229.401Z" fill="#374957"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_403_2980">
+        <rect width="261" height="261" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
+        </a>
+        
+</body>
+
+</html>
